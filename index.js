@@ -30,7 +30,8 @@ function renderGame(){
 }
 
 function newCard(){
-  let thirdCard = 7
-  sum += thirdCard 
+  let card = 7
+  sum += card 
+  cards.push(card)
   renderGame()
 }
