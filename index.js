@@ -12,7 +12,7 @@ console.log(cards)
 
 function getRandomCard(){
   let randomCard = Math.floor(Math.random()* 13) + 1
-  if( randomCard >= 11){
+  if( randomCard > 10){
     return 10
   }else if(randomCard === 1){
     return 11
@@ -27,7 +27,7 @@ function startGame(){
   let firstCard = getRandomCard() 
   let secondCard = getRandomCard()
   sum = firstCard + secondCard
-  cards.push(firstCard, secondCard)
+  cards = [firstCard, secondCard]
 
   renderGame()
 }
@@ -52,9 +52,11 @@ function renderGame(){
 }
 
 function newCard(){
+  if(isAlive === true && hasBlackjack === false){
   let card = getRandomCard()
   sum += card 
   cards.push(card)
   console.log(cards)
   renderGame()
+  }
 }
