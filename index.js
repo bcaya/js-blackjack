@@ -1,4 +1,8 @@
 
+let player = {
+  name: "Bobby",
+  chips: 145
+}
 let cards = []
 let sum = 0  
 let hasBlackjack = false
@@ -7,8 +11,10 @@ let message = "" //initialize blank message as placeholder
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+let playerEl = document.getElementById("player-el")
+let startButton = document.getElementById("start-btn")
 
-console.log(cards)
+playerEl.textContent = player.name + " : " + "$" + player.chips
 
 function getRandomCard(){
   let randomCard = Math.floor(Math.random()* 13) + 1
@@ -46,8 +52,8 @@ function renderGame(){
   }else{
     message = "You're out of the game!"
     isAlive = false
+    startButton.textContent = "START A NEW GAME?"
   }
-
   messageEl.textContent = message 
 }
 
